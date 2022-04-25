@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/grey_background">
+    <com.google.android.material.appbar.MaterialToolbar
+
+        android:id="@+id/customToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@color/grey_background"
+        android:backgroundTint="@color/grey_background">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="@dimen/back_button_dimen"
+                android:layout_height="@dimen/back_button_dimen"
+                android:src="@drawable/ic_back_button"/>
+            <TextView
+                android:layout_marginStart="@dimen/back_and_text_gap"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/restaurant_name"
+                android:padding="@dimen/restaurant_name_padding"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.appbar.MaterialToolbar>
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fl"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomcard"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customToolbar"
+        app:layout_constraintVertical_weight="1"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@drawable/activity_bottomlayout"
+        android:id="@+id/bottomcard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:paddingHorizontal="5dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="20dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintBottom_toTopOf="@+id/dottedLine"
+            android:layout_marginHorizontal="@dimen/commonbar_margin"
+            android:layout_marginTop="@dimen/addressbar_topmargin"
+            android:layout_marginBottom="@dimen/addressbar_bottommargin"
+
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <TextView
+                android:id="@+id/billing"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/dilivery_add_time"
+                style="@style/add_bar_style"
+                android:paddingBottom="@dimen/billing_padding"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/locationChangeButton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                app:layout_constraintRight_toLeftOf="@id/locationChangeButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/detailed_add"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/billing" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/locationChangeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeWidth="1dp"
+                android:outlineAmbientShadowColor="@color/white"
+                android:outlineSpotShadowColor="@color/white"
+                app:cardCornerRadius="10dp"
+                app:strokeColor="@color/light_grey"
+
+
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+                    <ImageView
+                        android:layout_width="@dimen/location_nav_icon_dimens"
+                        android:layout_height="@dimen/location_nav_icon_dimens"
+                        android:src="@drawable/ic_icons8_email_send_24"
+                        android:layout_marginVertical="@dimen/address_select_margin"
+                        android:layout_marginLeft="@dimen/address_select_margin"
+                        />
+                    <ImageView
+                        android:layout_width="@dimen/location_nav_icon_dimens"
+                        android:layout_height="@dimen/location_nav_icon_dimens"
+                        android:src="@drawable/ic_baseline_keyboard_arrow_down_orange_24"
+                        android:layout_marginVertical="@dimen/address_select_margin"
+                        android:layout_marginRight="@dimen/address_select_margin"/>
+
+
+                </LinearLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/dottedLine"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dotted_line_height"
+            android:layout_marginVertical="@dimen/dotted_line_margin"
+            android:layerType="software"
+            android:src="@drawable/dotted_line"
+            app:layout_constraintBottom_toTopOf="@id/tv2"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tv2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/commonbar_margin"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <TextView
+                android:id="@+id/totalPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/initial_amount"
+                style="@style/add_bar_style"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/see_bill"
+                android:textColor="@color/green"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/totalPrice" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:backgroundTint="@color/green"
+                app:cornerRadius="@dimen/corner_radius"
+                android:text="@string/pay_text"
+                android:textSize="@dimen/pay_button_text_size"
+                android:textAllCaps="false"
+                android:paddingVertical="@dimen/pay_button_vertical_pad"
+                android:paddingHorizontal="@dimen/pa_button_horizontal_pad"
+                >
+            </com.google.android.material.button.MaterialButton>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

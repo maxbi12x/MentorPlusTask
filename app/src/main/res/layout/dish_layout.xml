@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingVertical="@dimen/layout_main_padding"
+    android:paddingHorizontal="2dp">
+    <LinearLayout
+        android:id="@+id/rvtexts"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/dishes_edit"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:orientation="horizontal"
+        android:layout_marginRight="@dimen/dishl_lay_txt_btn_gap">
+        <ImageView
+            android:layout_marginTop="@dimen/veg_icon_margin"
+            android:layout_marginHorizontal="@dimen/veg_icon_margin"
+            android:layout_width="@dimen/veg_icon_size"
+            android:layout_height="@dimen/veg_icon_size"
+            android:src="@drawable/ic__531813273"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/dishName"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:lines="2"
+                android:ellipsize="end"
+                android:textSize="@dimen/dish_text_size"/>
+
+            <TextView
+                android:id="@+id/dishDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:ellipsize="end"
+                android:textSize="@dimen/dish_desc_size"
+                />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Customize"
+                    style="@style/customizeButtonStyle" />
+                <ImageView
+                    android:layout_width="@dimen/btn_dwn_dim"
+                    android:layout_height="@dimen/btn_dwn_dim"
+                    android:src="@drawable/ic_down_arrow"
+                    android:layout_marginLeft="2dp"/>
+
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <com.google.android.material.card.MaterialCardView
+        android:layout_marginHorizontal="@dimen/layour_btn_margin"
+        android:id="@+id/dishes_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/layout_btn_radius"
+        app:layout_constraintRight_toLeftOf="@id/price"
+        app:layout_constraintTop_toTopOf="parent"
+        android:outlineAmbientShadowColor="@color/white"
+        android:outlineSpotShadowColor="@color/white"
+        app:strokeWidth="@dimen/layout_btn_stroke"
+        app:strokeColor="@color/light_grey"
+        android:padding="@dimen/layout_btn_padding">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+
+            android:gravity="center"
+            >
+            <ImageView
+                android:id="@+id/dish_sub"
+                android:layout_width="@dimen/dish_quantity_image_dimen"
+                android:layout_height="@dimen/dish_quantity_image_dimen"
+                android:src="@drawable/ic_baseline_horizontal_rule_24"
+                android:layout_marginHorizontal="@dimen/dish_quantity_slector_margin"/>
+            <TextView
+                android:id="@+id/dish_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1"
+                style="@style/dish_count_style"
+
+                android:layout_marginHorizontal="@dimen/dish_quantity_slector_margin"/>
+            <ImageView
+                android:id="@+id/dish_add"
+                android:layout_width="@dimen/dish_quantity_image_dimen"
+                android:layout_height="@dimen/dish_quantity_image_dimen"
+                android:src="@drawable/ic_baseline_add_24"
+                android:layout_marginHorizontal="@dimen/dish_quantity_slector_margin"
+                />
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.google.android.material.card.MaterialCardView>
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="@dimen/dish_layout_price_size"
+        android:text="₹00000"
+        style="@style/dish_layout_price_style"
+        android:gravity="right"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/dishes_edit"
+        app:layout_constraintBottom_toBottomOf="@id/dishes_edit"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginRight="@dimen/price_margin"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

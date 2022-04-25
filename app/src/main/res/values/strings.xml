@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MentorPlusTask</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="offers_benefits"><![CDATA[Offers & Benefits]]></string>
+    <string name="save_144_with_party"><![CDATA[Save <b>₹ 144</b> with PARTY]]></string>
+    <string name="restaurant_name">Behrouz Biryani</string>
+    <string name="pay_text">Proceed to Pay</string>
+    <string name="see_bill">View Detailed Bill</string>
+    <string name="initial_amount">₹ 0</string>
+    <string name="dilivery_add_time">Deliver to Anand Vihar | 53 Mins</string>
+    <string name="detailed_add">C43, Upper Ground, Anand Vihar, A Block Colo...</string>
+</resources>
