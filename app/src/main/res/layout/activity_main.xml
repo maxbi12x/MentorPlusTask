@@ -163,6 +163,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/billingDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/see_bill"
@@ -172,19 +173,20 @@
                 app:layout_constraintTop_toBottomOf="@+id/totalPrice" />
 
             <com.google.android.material.button.MaterialButton
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/billingDetails"
                 android:backgroundTint="@color/green"
+                android:layout_marginLeft="30dp"
                 app:cornerRadius="@dimen/corner_radius"
                 android:text="@string/pay_text"
                 android:textSize="@dimen/pay_button_text_size"
                 android:textAllCaps="false"
                 android:paddingVertical="@dimen/pay_button_vertical_pad"
-                android:paddingHorizontal="@dimen/pa_button_horizontal_pad"
-                >
+                android:paddingHorizontal="@dimen/pa_button_horizontal_pad">
             </com.google.android.material.button.MaterialButton>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

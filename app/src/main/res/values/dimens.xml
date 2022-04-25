@@ -8,7 +8,7 @@
     <dimen name="restaurant_name_padding">5dp</dimen>
     <dimen name="pay_button_text_size">18sp</dimen>
     <dimen name="pay_button_vertical_pad">10dp</dimen>
-    <dimen name="pa_button_horizontal_pad">45dp</dimen>
+    <dimen name="pa_button_horizontal_pad">10dp</dimen>
     <dimen name="corner_radius">10dp</dimen>
     <dimen name="dotted_line_height">5dp</dimen>
     <dimen name="dotted_line_margin">10dp</dimen>
